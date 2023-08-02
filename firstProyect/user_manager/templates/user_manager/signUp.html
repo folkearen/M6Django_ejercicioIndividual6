@@ -1,0 +1,41 @@
+{% extends 'user_manager/base_users.html' %}
+{% block main_user  %}
+    <div class="user_manager_title">
+        <h1>Crear cuenta</h1>
+        <a href=" {% url 'home:home' %}"><i class="fa-solid fa-house home_icon" style="color: #ffffff;"></i></a> 
+    </div>
+    <div class="user_manager_signup">
+        {% if error %}<p class="user_manager_error">🚨 {{ error }}</p>{% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="{{ form.nombre.id_for_label }}">Nombres:</label>
+                {{ form.nombre }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.apellido.id_for_label }}">Apellidos:</label>
+                {{ form.apellido }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Correo electrónico:</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}">Contraseña:</label>
+                {{ form.password }}
+                <p>Tu contraseña debe tener al menos 8 caracteres y contener letras mayúsculas, minúsculas y números.</p>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.confirm_password.id_for_label }}">Confirmar contraseña:</label>
+                {{ form.confirm_password }}
+                <p>Vuelva a ingresar la contraseña, debe ser idéntica a la del campo anterior</p>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.tipo_usuario.id_for_label }}">Tipo de usuario</label>
+                {{ form.tipo_usuario}}
+            </div>
+            <input id="btn_signup"  class=" btn btn-primary btn_signup col-12 col-lg-4 mb-2" type="submit" value="Registrarse">
+        </form>
+    </div>
+{% endblock main_user  %}

@@ -1,0 +1,9 @@
+Se han realizado dos restricciones, la primera utilizando el decorador @login_required imrpotado desde django.contrib.auth.decorators 
+el decorador en este caso permite que ciertas vistas, y por tanto los respectivos template que rederizcen con sus urls queden
+inaccesibles para aquellos visitantes de la paginas web, que no estén logeados.
+
+Por otra parte, se utilizo  user.is_authenticated desde los template, para que mediante un condicional if pudiese mostrar o no
+algunos elementos de la pagina, dependiendo si la pagina es visitada por un usuario no registrado ni logeado, o un usuario auntenticado.
+
+Si bien ambas restrcciones puede leerse similares, la primera prohibe aceeso a ciertas paginas del sitio web y la segundo solo oculta
+ciertos elementos.

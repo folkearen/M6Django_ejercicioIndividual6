@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo.jpg' %}" type="image/x-icon">
+    <title>Libreros. Tu espacio</title>
+</head>
+<body class="d-flex flex-md-column">
+    <header class="row-12 col-2  col-md-12 header">
+        <nav id="navbar" class="d-none d-md-flex navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid ">
+              <button id="ham" class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span id="ham" class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse p-md-3" id="navbarTogglerDemo01">
+                <a class="navbar-brand  d-flex justify-content-center " href="{% url 'home:home' %}"><img class="logo col-auto" src="{% static 'home/img/logo.jpg' %}" alt="Logo"></a>
+                <form class="d-flex busq col-lg-4" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn" type="submit">Buscar</button>
+                </form>
+                <ul class="navbar-nav ms-sm-5 mb-2 mb-lg-0 col-lg-6 d-flex justify-content-end">
+                  <li class=" nav-item">
+                    <a  class="nav-link" aria-current="page" href=" {% url 'home:home' %} ">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="">Libreía</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="">Liblog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a   class="nav-link ar_nav_hight" href="{% url 'user_manager:signUp' %}">Crear cuenta</a>
+                  </li>
+
+                  {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link ar_nav_high" href="{% url 'user_manager:logout' %}">Logout</a>
+                    </li>
+                  {% else %}
+                    <li class="nav-item">
+                      <a  class="nav-link ar_nav_hight" href="{% url 'user_manager:login' %}">Iniciar sesión</a>
+                    </li>
+                  {% endif %}
+ 
+                  {% comment %} <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'user_manager:mostrarUsuarios' %} ">Show user</a>
+                  </li> {% endcomment %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+          {% comment %} nav mobile tablet {% endcomment %}
+          <nav class="navbar navbar-light navoffset fixed-top d-md-none col-1 row-12 ps-sm-4">
+            <div class="container-fluid">
+              <button id="ham" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <a class="navbar-brand  d-flex justify-content-center " href="{% url 'home:home' %}"><img class="logo col-auto" src="{% static 'user_manager/img/logo.jpg' %}" alt="Logo"></a>
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class=" nav-item">
+                      <a  class="nav-link" aria-current="page" href=" {% url 'home:home' %} ">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="">Libreía</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="">Liblog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href=" {% url 'home:contacto' %} ">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                      <a   class="nav-link ar_nav_hight" aria-current="page" href="{% url 'user_manager:signUp' %}">Crear cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link ar_nav_high" aria-current="page"  href="{% url 'user_manager:login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link ar_nav_high" aria-current="page"  href="{% url 'user_manager:logout' %}">Logout</a>
+                    </li>
+                    {% comment %} <li class="nav-item">
+                      <a class="nav-link" href=" {% url 'user_manager:mostrarUsuarios' %} ">Show user</a>
+                    </li> {% endcomment %}
+                  </ul>
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        {% block main  %}
+        {% endblock main %}
+    </main>
+    <footer class="container-fluid d-none d-lg-block">
+        <div>
+            <p>Project by almubaDev</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

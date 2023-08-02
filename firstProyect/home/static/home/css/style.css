@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+}
+.header {
+    background-color: #CAD5CF;
+    min-height:10vh ;
+}
+
+#navbar {
+    background-color: #CAD5CF;
+    padding: 0;
+    
+}
+.navoffset {
+    background-color: #CAD5CF;
+}
+footer {
+    background-color: black;
+    min-height: 10vh;
+    padding: .5rem;
+    bottom: 0;
+    position: absolute;
+ 
+    
+}
+footer div {
+    color:  #16b8f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* .busq{
+    margin-right: 35rem;
+} */
+
+#ham{
+    border: none;
+    color: transparent;
+}
+
+.logo {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+}
+
+.btn{
+    background-color: #D5CEA2;
+    border: none;
+    color: orangered;
+}
+.btn:hover{
+    color: whitesmoke;
+    background-color:  #5A11BF;
+}
+.visite_blog {
+    width: 100%;
+}
+.card_header_signup{
+    border: none;
+    color: #5A11BF;
+}
+
+.shop_home_title{
+    color: #5A11BF;
+}
+.ar_nav_hight {
+    color: #5A11BF !important;
+
+}
+
+

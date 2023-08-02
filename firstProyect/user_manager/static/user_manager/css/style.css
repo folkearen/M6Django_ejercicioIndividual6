@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+.user_manager_body {
+    background-image: url('../img/logo.jpg'); 
+    background-position: center;
+    background-size: cover;
+}
+.user_manager_main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.user_manager_titles{
+    text-align: start;
+}
+.user_manager_signup {
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 2rem; */
+    width:100%;
+   
+}
+.user_manager_title {
+    align-items: center;
+    color: #f0f8ff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+
+   
+}
+.home_icon {
+    font-size: 2rem;
+    color: #f0f8ff;
+}
+.user_manager_signup form {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    position: relative;
+    width: 60%;
+    
+    
+}
+.user_manager_signup form label {
+    color: #5A11BF;
+}
+.user_manager_signup form input {
+    background-color: #f0f8ff;
+    border: none;
+    color: #ff4500;
+    padding-left: 1rem;
+}
+.user_manager_signup form input:focus{
+    outline: solid 0.1rem #ff4500;
+    
+}
+.user_manager_signup form input::placeholder {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+.user_manager_signup form::before, .manager_user_successful::before{
+    background-color: #d3d3d3;
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem;
+    bottom: 0;
+    content: "";
+    filter: blur(3px); 
+    left: 0;
+    right: 0;
+    opacity: 0.6; 
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+.user_manager_signup form div{
+    display: flex;
+    flex-direction: column;
+    
+}
+.user_manager_signup form label{
+    margin-bottom: .4rem;
+}
+.user_manager_signup form p {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0;
+
+}
+#btn_signup{
+    
+    background-color: #D5CEA2;
+    margin: 1rem auto;
+
+}
+.user_manager_error{
+    background-color: red;
+    border-radius: 0.8rem;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+   
+}
+.manager_user_successful{
+    align-items: center;
+    color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1.8rem 3rem;
+    position: relative;
+    width: 60%;
+}
+.manager_user_successful h2 {
+    color: #5A11BF;
+    font-size: 5rem;
+}
+.manager_user_successful::before{
+    background-color: #D5CEA2;;
+    opacity: 0.6;
+    
+}
+.happy_welcome {
+    background-image: url('../img/fuegos-artificiales-05.gif');
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    
+}
+@media screen and (max-width: 576px){
+    .user_manager_signup form{
+        width: 90%;
+    }
+    
+}

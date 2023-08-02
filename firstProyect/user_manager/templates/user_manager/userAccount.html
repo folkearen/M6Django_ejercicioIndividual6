@@ -1,0 +1,7 @@
+{% extends 'home/base.html' %}
+{% block main %}
+    <h1>Hola {{ user.nombre }}</h1>
+    {% for group in user.groups.all %}
+        <h1> {{ group.name }} </h1>
+    {% endfor %}
+{% endblock main %}

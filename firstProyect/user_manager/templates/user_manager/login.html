@@ -1,0 +1,49 @@
+{% extends 'user_manager/base_users.html' %}
+{% block main_user %}
+  <div class="user_manager_title">
+    <h1>Iniciar sesión</h1>
+    <a href=" {% url 'home:home' %}"><i class="fa-solid fa-house home_icon" style="color: #ffffff;"></i></a> 
+  </div>
+  <div class="user_manager_signup">
+    <form method="POST">
+      {% if form.non_field_errors %}
+        <div class="user_manager_errorlist">
+          {% for error in form.non_field_errors %}
+            <p class="user_manager_error">🚨 {{ error }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if form.username.errors %}
+        <div class="user_manager_errorlist">
+          {% for error in form.username.errors %}
+              <p class="user_manager_error">🚨 {{ error }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+  {% comment %} {% if form.password.errors %}
+      <ul class="user_manager_errorlist">
+          {% for error in form.password.errors %}
+              <li>{{ error }}</li>
+          {% endfor %}
+      </ul>
+  {% endif %} {% endcomment %}
+
+
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="{{ form.username.id_for_label }}">Correo electrónico:</label>
+        {{ form.username }}
+      </div>
+  
+      <div class="form-group">
+        <label for="{{ form.password.id_for_label }}">Contraseña:</label>
+        {{ form.password }}
+      </div>
+      <input id="btn_signup"  class=" btn btn-primary btn_signup col-12 col-lg-4 mb-2" type="submit" value="Iniciar sesión">
+    </form>
+  </div>
+{% endblock main_user %}
+
+
+
+

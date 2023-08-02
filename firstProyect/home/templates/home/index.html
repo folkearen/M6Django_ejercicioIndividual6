@@ -1,0 +1,19 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block main %}
+<div class="container-fluid main_index d-flex flex-column justify-content-between flex-md-row row gx-5 p-4">
+    <div class="card col-12 col-lg-5  d-none d-lg-flex">
+        <div class="card-header card_header_signup">
+          <p>Crea, reseña, comparte... ya somos {{ cantidad_usuarios }} libreros.</p>  
+        </div>
+        <div class="card-body pt-0">
+          <h1 class="shop_home_title">Libreros</h1>
+          <p class="card-text">Añade libros a tu lista de leidos, califícalos, cuenta tus impresiones, debate sobre su trama y contexto, escribe pasajes literarios alternativos.</p>
+          <a href="  " class="btn btn-primary btn_signup col-12 col-lg-4 mb-2 visite_blog">Visita nuestro Liblog</a>
+        </div>
+    </div>
+    <div class="col-12 col-lg-5 login d-flex flex-column">
+        <h4 class="shop_home_title">Aquí irá una vista al shop</h4>
+    </div>
+</div>
+{% endblock main %}

@@ -1,0 +1,11 @@
+{% extends 'user_manager/base_users.html' %}
+{% block main_user %}
+    <div class="manager_user_successful">
+        <div class="happy_welcome">
+            <h4>Bienvenido a Libreros, estamos felices de poder crear, reseñar y compartir contigo.</h4>
+            <h3>Eres el Librero número: </h3>
+            <h2>{{ numero_usuario }}</h2>
+        </div>
+    </div>
+    <meta http-equiv="refresh" content="7;URL= {% url 'user_manager:login' %}">
+{% endblock main_user %}
